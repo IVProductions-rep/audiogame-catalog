@@ -73,7 +73,7 @@
     "also_on":          { "it": "Disponibile anche su {platforms}.", "en": "Also available on {platforms}." },
     "and":              { "it": "e", "en": "and" },
     "platform_steam":   { "it": "PC con Steam", "en": "PC on Steam" },
-    "platform_ios":     { "it": "iPhone e iPad", "en": "iPhone and iPad" },
+    "platform_ios":     { "it": "iPhone, iPad", "en": "iPhone, iPad" },
     "platform_android": { "it": "Android", "en": "Android" },
     "trailer":          { "it": "Ascolta il trailer. Invio per avviarlo o fermarlo.", "en": "Listen to the trailer. Press Enter to play or stop it." },
     "trailer_stopped":  { "it": "Trailer fermato.", "en": "Trailer stopped." },
