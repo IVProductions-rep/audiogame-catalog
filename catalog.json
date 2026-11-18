@@ -1,199 +1,615 @@
 {
   "schema": 1,
   "minClient": 1,
-  "updated": "2026-11-17",
-  "languages": ["it", "en"],
+  "updated": "2026-11-18",
+  "languages": [
+    "it",
+    "en"
+  ],
   "fallbackLanguage": "en",
   "voiceMode": "system",
   "newDays": 120,
   "steamLinkMode": "web",
-
   "audio": {
-    "volumes": { "ui": -8, "voice": 0, "trailer": -4, "preview": -16 },
+    "volumes": {
+      "ui": -8,
+      "voice": 0,
+      "trailer": -4,
+      "preview": -16
+    },
     "ui": {
-      "move": "ui/move", "edge": "ui/edge", "confirm": "ui/confirm", "back": "ui/back",
-      "open": "ui/open", "close": "ui/close", "new": "ui/new", "buy": "ui/buy", "error": "ui/error"
+      "move": "ui/move",
+      "edge": "ui/edge",
+      "confirm": "ui/confirm",
+      "back": "ui/back",
+      "open": "ui/open",
+      "close": "ui/close",
+      "new": "ui/new",
+      "buy": "ui/buy",
+      "error": "ui/error"
     },
     "ambience": {
       "bed": "amb/night_bed",
       "bedDb": -27,
-      "oneShots": ["amb/leaves1", "amb/leaves2", "amb/owl1", "amb/owl2", "amb/bird1", "amb/bird2", "amb/cricket1", "amb/branch1"],
-      "oneShotEverySec": [5, 15],
-      "oneShotDb": [-34, -25],
+      "oneShots": [
+        "amb/leaves1",
+        "amb/leaves2",
+        "amb/owl1",
+        "amb/owl2",
+        "amb/bird1",
+        "amb/bird2",
+        "amb/cricket1",
+        "amb/branch1"
+      ],
+      "oneShotEverySec": [
+        5,
+        15
+      ],
+      "oneShotDb": [
+        -34,
+        -25
+      ],
       "panRange": 0.85,
       "duckUnderTrailerDb": -10,
       "duckUnderVoiceDb": -4
     }
   },
-
   "pages": {
     "list": {
-      "intro": ["s:intro", "$count", "?desktop:s:intro_keys", "?mobile:s:intro_touch"],
-      "item": ["?new:s:new", "g:title", "?comingSoon:$price", "g:short"],
-      "itemDetail": ["g:short"],
+      "intro": [
+        "s:intro",
+        "$count",
+        "?desktop:s:intro_keys",
+        "?mobile:s:intro_touch"
+      ],
+      "item": [
+        "?new:s:new",
+        "g:title",
+        "?comingSoon:$price",
+        "g:short"
+      ],
+      "itemDetail": [
+        "g:short"
+      ],
       "itemAction": "open:game",
       "previewTrailerAfterSec": 1.5,
-      "footer": [ { "say": ["s:back_to_game"], "action": "close" } ]
+      "footer": [
+        {
+          "say": [
+            "s:back_to_game"
+          ],
+          "action": "close"
+        }
+      ]
     },
     "game": {
       "enter": [],
       "items": [
-        { "say": ["g:title", "g:short"], "action": "speak" },
-        { "say": ["?!comingSoon:s:buy_{platform}", "?comingSoon:s:wishlist_{platform}", "$price", "$discount"], "action": "store", "if": "store" },
-        { "say": ["s:trailer"], "action": "trailer", "if": "trailer" },
-        { "say": ["$platforms"], "action": "speak", "if": "platforms" },
-        { "say": ["?!comingSoon:s:buy_{platform}", "?comingSoon:s:wishlist_{platform}", "$price", "$discount"], "action": "store", "if": "store" },
-        { "say": ["s:back"], "action": "back" }
+        {
+          "say": [
+            "g:title",
+            "g:short"
+          ],
+          "action": "speak"
+        },
+        {
+          "say": [
+            "?!comingSoon:s:buy_{platform}",
+            "?comingSoon:s:wishlist_{platform}",
+            "$price",
+            "$discount"
+          ],
+          "action": "store",
+          "if": "store"
+        },
+        {
+          "say": [
+            "s:trailer"
+          ],
+          "action": "trailer",
+          "if": "trailer"
+        },
+        {
+          "say": [
+            "$platforms"
+          ],
+          "action": "speak",
+          "if": "platforms"
+        },
+        {
+          "say": [
+            "?!comingSoon:s:buy_{platform}",
+            "?comingSoon:s:wishlist_{platform}",
+            "$price",
+            "$discount"
+          ],
+          "action": "store",
+          "if": "store"
+        },
+        {
+          "say": [
+            "s:back"
+          ],
+          "action": "back"
+        }
       ]
     }
   },
-
   "strings": {
-    "title":            { "it": "Altri audiogiochi", "en": "More audio games" },
-    "intro":            { "it": { "text": "Altri audiogiochi di IV Productions.", "tts": "Altri audiogiochi di I Vi Productions." },
-                          "en": "More audio games from IV Productions." },
-    "intro_keys":       { "it": "Frecce su e giù per scorrere, Invio per aprire, Esc per tornare al gioco.",
-                          "en": "Use up and down arrows to browse, Enter to open, Escape to go back to the game." },
-    "intro_touch":      { "it": "Scorri in su o in giù per cambiare gioco, tocca due volte per aprire, scorri a sinistra per tornare indietro.",
-                          "en": "Swipe up or down to browse, double tap to open, swipe left to go back." },
-    "count_one":        { "it": "Un gioco.", "en": "One game." },
-    "count_many":       { "it": "{n} giochi.", "en": "{n} games." },
-    "new":              { "it": "Novità", "en": "New" },
-    "coming_soon":      { "it": "In arrivo: {date}.", "en": "Coming soon: {date}." },
-    "coming_soon_short":{ "it": "in arrivo", "en": "coming soon" },
-    "price":            { "it": "{price}", "en": "{price}" },
-    "free":             { "it": "Gratuito.", "en": "Free." },
-    "discount":         { "it": "In sconto del {pct} per cento, prezzo pieno {full}.", "en": "{pct} percent off, full price {full}." },
-    "buy_steam":        { "it": "Acquista su Steam:", "en": "Buy on Steam:" },
-    "buy_android":      { "it": "Acquista su Google Play:", "en": "Buy on Google Play:" },
-    "buy_ios":          { "it": "Acquista sull'App Store:", "en": "Buy on the App Store:" },
-    "wishlist_steam":   { "it": "Aggiungi alla lista dei desideri su Steam.", "en": "Add to your Steam wishlist." },
-    "wishlist_android": { "it": "Apri la pagina su Google Play.", "en": "Open the Google Play page." },
-    "wishlist_ios":     { "it": "Apri la pagina sull'App Store.", "en": "Open the App Store page." },
-    "also_on":          { "it": "Disponibile anche su {platforms}.", "en": "Also available on {platforms}." },
-    "and":              { "it": "e", "en": "and" },
-    "platform_steam":   { "it": "PC con Steam", "en": "PC on Steam" },
-    "platform_ios":     { "it": "iPhone, iPad", "en": "iPhone, iPad" },
-    "platform_android": { "it": "Android", "en": "Android" },
-    "trailer":          { "it": "Ascolta il trailer. Invio per avviarlo o fermarlo.", "en": "Listen to the trailer. Press Enter to play or stop it." },
-    "trailer_stopped":  { "it": "Trailer fermato.", "en": "Trailer stopped." },
-    "back":             { "it": "Torna alla lista.", "en": "Back to the list." },
-    "back_to_game":     { "it": "Torna al gioco.", "en": "Back to the game." },
-    "store_opened":     { "it": "Apro la pagina dello store.", "en": "Opening the store page." },
-    "store_opened_web": { "it": "Apro la pagina Steam nel browser.", "en": "Opening the Steam page in your browser." },
-    "hint":             { "it": "↑ ↓ scorri   ·   Invio apri   ·   Esc indietro   ·   R ripeti   ·   Pad: stick, grilletto, Menu",
-                          "en": "↑ ↓ browse   ·   Enter open   ·   Esc back   ·   R repeat   ·   Pad: stick, trigger, Menu" },
-    "hint_touch":       { "it": "Scorri su/giù · doppio tocco apri · scorri a sinistra indietro · tocco ripeti",
-                          "en": "Swipe up/down · double tap open · swipe left back · tap repeat" }
+    "title": {
+      "it": "Altri audiogiochi",
+      "en": "More audio games"
+    },
+    "intro": {
+      "it": {
+        "text": "Altri audiogiochi di IV Productions.",
+        "tts": "Altri audiogiochi di I Vi Productions."
+      },
+      "en": "More audio games from IV Productions."
+    },
+    "intro_keys": {
+      "it": "Frecce su e giù per scorrere, Invio per aprire, Esc per tornare al gioco.",
+      "en": "Use up and down arrows to browse, Enter to open, Escape to go back to the game."
+    },
+    "intro_touch": {
+      "it": "Scorri in su o in giù per cambiare gioco, tocca due volte per aprire, scorri a sinistra per tornare indietro.",
+      "en": "Swipe up or down to browse, double tap to open, swipe left to go back."
+    },
+    "count_one": {
+      "it": "Un gioco.",
+      "en": "One game."
+    },
+    "count_many": {
+      "it": "{n} giochi.",
+      "en": "{n} games."
+    },
+    "new": {
+      "it": "Novità",
+      "en": "New"
+    },
+    "coming_soon": {
+      "it": "In arrivo: {date}.",
+      "en": "Coming soon: {date}."
+    },
+    "coming_soon_short": {
+      "it": "in arrivo",
+      "en": "coming soon"
+    },
+    "price": {
+      "it": "{price}",
+      "en": "{price}"
+    },
+    "free": {
+      "it": "Gratuito.",
+      "en": "Free."
+    },
+    "discount": {
+      "it": "In sconto del {pct} per cento, prezzo pieno {full}.",
+      "en": "{pct} percent off, full price {full}."
+    },
+    "buy_steam": {
+      "it": "Acquista su Steam:",
+      "en": "Buy on Steam:"
+    },
+    "buy_android": {
+      "it": "Acquista su Google Play:",
+      "en": "Buy on Google Play:"
+    },
+    "buy_ios": {
+      "it": "Acquista sull'App Store:",
+      "en": "Buy on the App Store:"
+    },
+    "wishlist_steam": {
+      "it": "Aggiungi alla lista dei desideri su Steam.",
+      "en": "Add to your Steam wishlist."
+    },
+    "wishlist_android": {
+      "it": "Apri la pagina su Google Play.",
+      "en": "Open the Google Play page."
+    },
+    "wishlist_ios": {
+      "it": "Apri la pagina sull'App Store.",
+      "en": "Open the App Store page."
+    },
+    "also_on": {
+      "it": "Disponibile anche su {platforms}.",
+      "en": "Also available on {platforms}."
+    },
+    "and": {
+      "it": "e",
+      "en": "and"
+    },
+    "platform_steam": {
+      "it": "PC con Steam",
+      "en": "PC on Steam"
+    },
+    "platform_ios": {
+      "it": "iPhone, iPad",
+      "en": "iPhone, iPad"
+    },
+    "platform_android": {
+      "it": "Android",
+      "en": "Android"
+    },
+    "trailer": {
+      "it": "Ascolta il trailer. Invio per avviarlo o fermarlo.",
+      "en": "Listen to the trailer. Press Enter to play or stop it."
+    },
+    "trailer_stopped": {
+      "it": "Trailer fermato.",
+      "en": "Trailer stopped."
+    },
+    "back": {
+      "it": "Torna alla lista.",
+      "en": "Back to the list."
+    },
+    "back_to_game": {
+      "it": "Torna al gioco.",
+      "en": "Back to the game."
+    },
+    "store_opened": {
+      "it": "Apro la pagina dello store.",
+      "en": "Opening the store page."
+    },
+    "store_opened_web": {
+      "it": "Apro la pagina Steam nel browser.",
+      "en": "Opening the Steam page in your browser."
+    },
+    "hint": {
+      "it": "↑ ↓ scorri   ·   Invio apri   ·   Esc indietro   ·   R ripeti   ·   Pad: stick, grilletto, Menu",
+      "en": "↑ ↓ browse   ·   Enter open   ·   Esc back   ·   R repeat   ·   Pad: stick, trigger, Menu"
+    },
+    "hint_touch": {
+      "it": "Scorri su/giù · doppio tocco apri · scorri a sinistra indietro · tocco ripeti",
+      "en": "Swipe up/down · double tap open · swipe left back · tap repeat"
+    }
   },
-
   "games": [
     {
-      "id": "audiospeed", "releaseDate": "2026-11-11", "productNames": ["Audiospeed", "AudioSpeed"],
-      "title": { "it": "Audiospeed", "en": "Audiospeed" },
-      "short": { "it": "Corse di astronavi ad altissima velocità da guidare a orecchio, con torneo, classifiche e una sfida a due tra chi gioca a orecchio e chi a vista.",
-                 "en": "High-speed starship races you steer by ear, with a tournament, leaderboards and a two-player duel between ears and eyes." },
-      "trailer": "trailer/audiospeed",
-      "stores": { "steam": { "appId": 3669730 } }
-    },
-    {
-      "id": "gunnar_malakor", "releaseDate": "2027-03-31", "comingSoon": true,
-      "releaseText_it": "primo trimestre 2027", "releaseText_en": "first quarter of 2027",
-      "productNames": ["Gunnar Malakor"],
-      "title": { "it": "Gunnar Malakor", "en": "Gunnar Malakor" },
-      "short": { "it": "Un'avventura completamente accessibile: sei un ladro condannato a morte e devi fuggire dalle segrete di un castello con l'astuzia.",
-                 "en": "A fully accessible adventure: you are a thief sentenced to death who must escape a castle's dungeons by wit alone." },
-      "trailer": "trailer/gunnar_malakor",
-      "stores": { "steam": { "appId": 3409650 } }
-    },
-    {
-      "id": "audiorace", "releaseDate": "2025-03-21",
-      "title": { "it": "AudioRace", "en": "AudioRace" },
-      "short": { "it": "Corse d'auto piene di adrenalina, da guidare seguendo solo il suono.",
-                 "en": "Adrenaline-filled car races you drive by following the sound alone." },
-      "trailer": "trailer/audiorace",
-      "stores": { "steam": { "appId": 3461910 } }
-    },
-    {
-      "id": "blindquest3", "releaseDate": "2024-06-11",
-      "title": { "it": "Blind Quest: The Ivy Queen", "en": "Blind Quest: The Ivy Queen" },
-      "short": { "it": "Gioco di ruolo fantasy: fuggi dalle prigioni della tirannica Regina dell'Edera, in 86 mappe da esplorare.",
-                 "en": "Fantasy role-playing game: escape the prisons of the tyrannical Ivy Queen across 86 maps." },
-      "trailer": "trailer/blindquest3",
+      "id": "audiospeed",
+      "releaseDate": "2026-11-11",
+      "productNames": [
+        "Audiospeed",
+        "AudioSpeed"
+      ],
+      "title": {
+        "it": "Audiospeed",
+        "en": "Audiospeed"
+      },
+      "short": {
+        "it": "Corse di astronavi ad altissima velocità da guidare a orecchio, con torneo, classifiche e una sfida a due tra chi gioca a orecchio e chi a vista.",
+        "en": "High-speed starship races you steer by ear, with a tournament, leaderboards and a two-player duel between ears and eyes."
+      },
+      "trailer": {
+        "it": "trailer/audiospeed_257407037",
+        "en": "trailer/audiospeed_257399160"
+      },
       "stores": {
-        "steam": { "appId": 2595410 },
-        "android": { "package": "com.ivproductions.blindquestthreefull", "price": { "EUR": 4.99, "USD": 4.99 } },
-        "ios": { "appId": 1660780052, "bundleId": "com.ivproductions.blindquestthree", "price": { "EUR": 6.99 } }
+        "steam": {
+          "appId": 3669730
+        }
+      },
+      "steamDate": "11 Nov, 2026"
+    },
+    {
+      "id": "gunnar_malakor",
+      "releaseDate": "2027-03-28",
+      "comingSoon": true,
+      "releaseText_it": "primo trimestre 2027",
+      "releaseText_en": "first quarter of 2027",
+      "productNames": [
+        "Gunnar Malakor"
+      ],
+      "title": {
+        "it": "Gunnar Malakor",
+        "en": "Gunnar Malakor"
+      },
+      "short": {
+        "it": "Sei un ladro condannato a morte: per fuggire dalle segrete del castello di Lysanthir avrai solo astuzia e improvvisazione.",
+        "en": "You are a thief sentenced to death: to escape the dungeons of Lysanthir castle you have only your wits and improvisation."
+      },
+      "trailer": {
+        "it": "trailer/gunnar_malakor_257459204",
+        "en": "trailer/gunnar_malakor_257459204"
+      },
+      "stores": {
+        "steam": {
+          "appId": 3409650
+        }
+      },
+      "steamDate": "Q1 2027"
+    },
+    {
+      "id": "audiorace",
+      "releaseDate": "2025-03-21",
+      "title": {
+        "it": "AudioRace",
+        "en": "AudioRace"
+      },
+      "short": {
+        "it": "Corse d'auto piene di adrenalina, da guidare seguendo solo il suono.",
+        "en": "Adrenaline-filled car races you drive by following the sound alone."
+      },
+      "trailer": {
+        "it": "trailer/audiorace_257116339",
+        "en": "trailer/audiorace_257115884"
+      },
+      "stores": {
+        "steam": {
+          "appId": 3461910
+        }
+      },
+      "steamDate": "21 Mar, 2025"
+    },
+    {
+      "id": "blindquest3",
+      "releaseDate": "2024-06-11",
+      "title": {
+        "it": "Blind Quest: The Ivy Queen",
+        "en": "Blind Quest: The Ivy Queen"
+      },
+      "short": {
+        "it": "Gioco di ruolo fantasy: fuggi dalle prigioni della tirannica Regina dell'Edera, in 86 mappe da esplorare.",
+        "en": "Fantasy role-playing game: escape the prisons of the tyrannical Ivy Queen across 86 maps."
+      },
+      "trailer": {
+        "it": "trailer/blindquest3_257012559",
+        "en": "trailer/blindquest3_257012559"
+      },
+      "stores": {
+        "steam": {
+          "appId": 2595410
+        },
+        "android": {
+          "package": "com.ivproductions.blindquestthreefull",
+          "price": {
+            "EUR": 4.99,
+            "USD": 4.99
+          }
+        },
+        "ios": {
+          "appId": 1660780052,
+          "bundleId": "com.ivproductions.blindquestthree",
+          "price": {
+            "EUR": 6.99
+          },
+          "available": false
+        }
+      },
+      "steamDate": "11 Jun, 2024"
+    },
+    {
+      "id": "hellhunter2",
+      "releaseDate": "2023-10-30",
+      "title": {
+        "it": "Hell Hunter: Damned Soul",
+        "en": "Hell Hunter: Damned Soul"
+      },
+      "short": {
+        "it": "Avventura horror: interagisci con gli ambienti e combatti in tempo reale riconoscendo i nemici dal suono stereo.",
+        "en": "Horror adventure: explore rooms and fight real-time battles by reading enemies through stereo sound."
+      },
+      "trailer": {
+        "it": "trailer/hellhunter2_256969252",
+        "en": "trailer/hellhunter2_256969252"
+      },
+      "stores": {
+        "steam": {
+          "appId": 2595430
+        },
+        "android": {
+          "package": "com.ivproductions.hellhunter2full",
+          "price": {
+            "EUR": 4.99,
+            "USD": 4.99
+          }
+        },
+        "ios": {
+          "appId": 6449684206,
+          "bundleId": "com.ivproductions.hellhunter2",
+          "price": {
+            "EUR": 6.99
+          }
+        }
+      },
+      "steamDate": "30 Oct, 2023"
+    },
+    {
+      "id": "blindquest2",
+      "releaseDate": "2021-03-18",
+      "title": {
+        "it": "Blind Quest: The Frost Demon",
+        "en": "Blind Quest: The Frost Demon"
+      },
+      "short": {
+        "it": "Gioco di ruolo fantasy: 70 mappe in 7 scenari, nuovi mostri e il Demone del Gelo da sconfiggere.",
+        "en": "Fantasy role-playing game: 70 maps in 7 settings, new monsters and the Frost Demon to defeat."
+      },
+      "trailer": {
+        "it": "trailer/blindquest2_256802107",
+        "en": "trailer/blindquest2_256802107"
+      },
+      "stores": {
+        "steam": {
+          "appId": 1421930
+        },
+        "android": {
+          "package": "com.ivproductions.blindquesttwofull",
+          "price": {
+            "EUR": 4.99,
+            "USD": 4.99
+          }
+        },
+        "ios": {
+          "appId": 1662383507,
+          "bundleId": "com.ivproductions.blindquesttwo",
+          "price": {
+            "EUR": 5.99
+          },
+          "available": false
+        }
+      },
+      "steamDate": "18 Mar, 2021"
+    },
+    {
+      "id": "western_drama",
+      "releaseDate": "2021-02-02",
+      "title": {
+        "it": "A Western Drama",
+        "en": "A Western Drama"
+      },
+      "short": {
+        "it": "Un audiogioco arcade senza grafica, solo orecchie e cuffie: una storia drammatica nel selvaggio West.",
+        "en": "An arcade audio game with no graphics, just your ears and headphones: a dramatic Wild West story."
+      },
+      "trailer": {
+        "it": "trailer/western_drama_256817231",
+        "en": "trailer/western_drama_256817231"
+      },
+      "stores": {
+        "steam": {
+          "appId": 1494230
+        },
+        "android": {
+          "package": "com.ThreeBit.AWDEng"
+        },
+        "ios": {
+          "appId": 1562455548,
+          "bundleId": "com.TriBit.AWDEng",
+          "price": {
+            "EUR": 14.99
+          }
+        }
+      },
+      "steamDate": "2 Feb, 2021"
+    },
+    {
+      "id": "eymerich_demon",
+      "releaseDate": "2020-03-27",
+      "title": {
+        "it": "Nicolas Eymerich, l'Inquisitore: Il Demone",
+        "en": "The Demon: Nicolas Eymerich, Inquisitor"
+      },
+      "short": {
+        "it": "L'inquisitore torna per l'ultima battaglia: un'avventura gotica che svela il piano oscuro del Maligno.",
+        "en": "The inquisitor returns for the final battle: a gothic adventure revealing the Devil's dark plan."
+      },
+      "trailer": {
+        "it": "trailer/eymerich_demon_256754130",
+        "en": "trailer/eymerich_demon_256754130"
+      },
+      "stores": {
+        "steam": {
+          "appId": 1108310
+        },
+        "android": {
+          "package": "com.AssociazioneAudiogames.EymerichIlDemone",
+          "price": {
+            "EUR": 8.99,
+            "USD": 8.99
+          }
+        },
+        "ios": {
+          "appId": 1506739998,
+          "bundleId": "com.AssociazioneAudiogames.ETheDemon",
+          "price": {
+            "EUR": 6.99
+          }
+        }
+      },
+      "steamDate": "27 Mar, 2020"
+    },
+    {
+      "id": "blindquest1",
+      "releaseDate": "2020-03-19",
+      "title": {
+        "it": "Blind Quest: The Enchanted Castle",
+        "en": "Blind Quest: The Enchanted Castle"
+      },
+      "short": {
+        "it": "Gioco di ruolo fantasy: guida il mercenario Nathan in un'avventura epica attraverso le terre di Aetheria.",
+        "en": "Fantasy role-playing game: lead Nathan the mercenary on an epic journey across the lands of Aetheria."
+      },
+      "trailer": {
+        "it": "trailer/blindquest1_256777445",
+        "en": "trailer/blindquest1_256777445"
+      },
+      "stores": {
+        "steam": {
+          "appId": 1258440
+        },
+        "android": {
+          "package": "com.ivproductions.blindquestfull",
+          "price": {
+            "EUR": 4.99,
+            "USD": 4.99
+          }
+        },
+        "ios": {
+          "appId": 1501491798,
+          "bundleId": "com.ivproductions.blindquest",
+          "price": {
+            "EUR": 3.99
+          }
+        }
+      },
+      "steamDate": "19 Mar, 2020"
+    },
+    {
+      "id": "hellhunter1",
+      "releaseDate": "2023-10-13",
+      "title": {
+        "it": "Hell Hunter: Anti-Nomen",
+        "en": "Hell Hunter: Anti-Nomen"
+      },
+      "short": {
+        "it": "Avventura horror: esplora le stanze, sopravvivi alle trappole e combatti in tempo reale capendo dal suono stereo da dove arrivano gli attacchi.",
+        "en": "Horror adventure: explore rooms, survive traps and fight real-time battles, hearing in stereo where each attack comes from."
+      },
+      "stores": {
+        "android": {
+          "package": "com.ivproductions.hellhunterfull",
+          "price": {
+            "EUR": 4.99,
+            "USD": 4.99
+          }
+        },
+        "ios": {
+          "appId": 1586126342,
+          "bundleId": "com.ivproductions.hellhunter",
+          "price": {
+            "EUR": 5.99
+          }
+        },
+        "steam": {
+          "appId": 2595420
+        }
+      },
+      "steamDate": "13 Oct, 2023",
+      "trailer": {
+        "it": "trailer/hellhunter1_256969823",
+        "en": "trailer/hellhunter1_256969823"
       }
     },
     {
-      "id": "hellhunter2", "releaseDate": "2023-10-30",
-      "title": { "it": "Hell Hunter: Damned Soul", "en": "Hell Hunter: Damned Soul" },
-      "short": { "it": "Avventura horror: interagisci con gli ambienti e combatti in tempo reale riconoscendo i nemici dal suono stereo.",
-                 "en": "Horror adventure: explore rooms and fight real-time battles by reading enemies through stereo sound." },
-      "trailer": "trailer/hellhunter2",
+      "id": "audio_rally_racing",
+      "releaseDate": "2015-09-10",
+      "title": {
+        "it": "Audio Rally Racing",
+        "en": "Audio Rally Racing"
+      },
+      "short": {
+        "it": "Corse di rally a tutta velocità su strade di campagna e di città: scegli l'auto e guida a orecchio.",
+        "en": "Full-speed rally racing on country roads and city streets: pick your car and drive by ear."
+      },
       "stores": {
-        "steam": { "appId": 2595430 },
-        "android": { "package": "com.ivproductions.hellhunter2full", "price": { "EUR": 4.99, "USD": 4.99 } },
-        "ios": { "appId": 6449684206, "bundleId": "com.ivproductions.hellhunter2", "price": { "EUR": 6.99 } }
-      }
-    },
-    {
-      "id": "blindquest2", "releaseDate": "2021-03-18",
-      "title": { "it": "Blind Quest: The Frost Demon", "en": "Blind Quest: The Frost Demon" },
-      "short": { "it": "Gioco di ruolo fantasy: 70 mappe in 7 scenari, nuovi mostri e il Demone del Gelo da sconfiggere.",
-                 "en": "Fantasy role-playing game: 70 maps in 7 settings, new monsters and the Frost Demon to defeat." },
-      "trailer": "trailer/blindquest2",
-      "stores": {
-        "steam": { "appId": 1421930 },
-        "android": { "package": "com.ivproductions.blindquesttwofull", "price": { "EUR": 4.99, "USD": 4.99 } },
-        "ios": { "appId": 1662383507, "bundleId": "com.ivproductions.blindquesttwo", "price": { "EUR": 5.99 } }
-      }
-    },
-    {
-      "id": "western_drama", "releaseDate": "2021-02-02",
-      "title": { "it": "A Western Drama", "en": "A Western Drama" },
-      "short": { "it": "Un audiogioco arcade senza grafica, solo orecchie e cuffie: una storia drammatica nel selvaggio West.",
-                 "en": "An arcade audio game with no graphics, just your ears and headphones: a dramatic Wild West story." },
-      "trailer": "trailer/western_drama",
-      "stores": {
-        "steam": { "appId": 1494230 },
-        "android": { "package": "com.ThreeBit.AWDEng" },
-        "ios": { "appId": 1562455548, "bundleId": "com.TriBit.AWDEng", "price": { "EUR": 14.99 } }
-      }
-    },
-    {
-      "id": "eymerich_demon", "releaseDate": "2020-03-27",
-      "title": { "it": "Nicolas Eymerich, l'Inquisitore: Il Demone", "en": "The Demon: Nicolas Eymerich, Inquisitor" },
-      "short": { "it": "L'inquisitore torna per l'ultima battaglia: un'avventura gotica che svela il piano oscuro del Maligno.",
-                 "en": "The inquisitor returns for the final battle: a gothic adventure revealing the Devil's dark plan." },
-      "trailer": "trailer/eymerich_demon",
-      "stores": {
-        "steam": { "appId": 1108310 },
-        "android": { "package": "com.AssociazioneAudiogames.EymerichIlDemone", "price": { "EUR": 8.99, "USD": 8.99 } },
-        "ios": { "appId": 1506739998, "bundleId": "com.AssociazioneAudiogames.ETheDemon", "price": { "EUR": 6.99 } }
-      }
-    },
-    {
-      "id": "blindquest1", "releaseDate": "2020-03-19",
-      "title": { "it": "Blind Quest: The Enchanted Castle", "en": "Blind Quest: The Enchanted Castle" },
-      "short": { "it": "Gioco di ruolo fantasy: guida il mercenario Nathan in un'avventura epica attraverso le terre di Aetheria.",
-                 "en": "Fantasy role-playing game: lead Nathan the mercenary on an epic journey across the lands of Aetheria." },
-      "trailer": "trailer/blindquest1",
-      "stores": {
-        "steam": { "appId": 1258440 },
-        "android": { "package": "com.ivproductions.blindquestfull", "price": { "EUR": 4.99, "USD": 4.99 } },
-        "ios": { "appId": 1501491798, "bundleId": "com.ivproductions.blindquest", "price": { "EUR": 3.99 } }
-      }
-    },
-    {
-      "id": "hellhunter1", "releaseDate": "2021-10-29",
-      "title": { "it": "Hell Hunter: Anti-Nomen", "en": "Hell Hunter: Anti-Nomen" },
-      "short": { "it": "Il primo capitolo dell'avventura horror da giocare a orecchio.",
-                 "en": "The first chapter of the horror adventure you play by ear." },
-      "stores": {
-        "android": { "package": "com.ivproductions.hellhunterfull", "price": { "EUR": 4.99, "USD": 4.99 } },
-        "ios": { "appId": 1586126342, "bundleId": "com.ivproductions.hellhunter", "price": { "EUR": 5.99 } }
+        "ios": {
+          "appId": 1035511900,
+          "bundleId": "com.IVProductions.AudioRallyRacingEN",
+          "price": {
+            "EUR": 2.99
+          }
+        }
       }
     }
   ]

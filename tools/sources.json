@@ -1,0 +1,25 @@
+{
+  "_info": "Dove cercare i giochi. sync_stores.py legge questi elenchi; ignore = app trovate che NON sono audiogiochi o non vanno nel catalogo (demo, colonne sonore, artbook, giochi non audio).",
+  "steamPublishers": ["IV Productions", "Associazione Audiogames", "Audiogames Association"],
+  "steamDevelopers": ["IV Productions", "Associazione Audiogames"],
+  "iosArtistIds": [1219985723],
+  "playDeveloperId": "5114521862187524127",
+  "steamIgnore": {
+    "342310": "RIOT: Civil Unrest", "2068030": "Kring", "297070": "Eymerich Book II (vecchio, non audiogioco)",
+    "279500": "Eymerich Book 1 (vecchio, non audiogioco)", "3409660": "Spinning Scarecrow", "3809560": "Evolvania Demo",
+    "1029730": "VR Ping Pong Pro", "848330": "Pride Run", "774131": "Nostradamus", "696430": "Progetto Ustica",
+    "382880": "Feudalism", "322990": "Black Viper", "1034550": "RIOT soundtrack", "1180350": "Pride Run artwork",
+    "1182220": "The Demon demo", "1067530": "Ustica soundtrack", "3110720": "Kring soundtrack", "3110920": "Kring artbook",
+    "3100290": "Kring scrapbooks", "3100300": "Kring 8-bit memories", "3560430": "Evolvania", "3602180": "Candy Luna Park",
+    "5213410": "Audiospeed Demo", "4132340": "Spinning Scarecrow Demo", "1434000": "BO020880", "1949180": "Nocturama",
+    "373360": "Cast of the Seven Godsends", "492710": "VR Ping Pong", "450060": "Insane Decay of Mind", "450740": "Mind Unleashed",
+    "1184470": "ASTROPUPPA", "372160": "Soviet Monsters", "1532470": "A Western Drama Soundtrack", "1546410": "A Western Drama Demo",
+    "1343310": "Space Wave Race (escluso dall'utente il 18/11/2026)"
+  },
+  "iosIgnore": {
+    "602192817": "The Inquisitor Audiogame Adventure (vecchio)", "1148929588": "Blind Gladiator (vecchio)"
+  },
+  "playIgnore": [
+    "com.ivproductions.blindquest", "com.ivproductions.blindquesttwo", "com.ivproductions.blindquestthree"
+  ]
+}
