@@ -65,6 +65,7 @@
       "item": [
         "?new:s:new",
         "g:title",
+        "?elsewhere:$onlyOn",
         "?comingSoon:$price",
         "g:short"
       ],
@@ -88,6 +89,7 @@
         {
           "say": [
             "g:title",
+            "?elsewhere:$onlyOn",
             "g:short"
           ],
           "action": "speak"
@@ -262,6 +264,22 @@
     "hint_touch": {
       "it": "Scorri su/giù · doppio tocco apri · scorri a sinistra indietro · tocco ripeti",
       "en": "Swipe up/down · double tap open · swipe left back · tap repeat"
+    },
+    "only_on": {
+      "it": "Disponibile solo su {platform}.",
+      "en": "Only available on {platform}."
+    },
+    "store_opened_web_ios": {
+      "it": "Apro la pagina dell'App Store nel browser.",
+      "en": "Opening the App Store page in your browser."
+    },
+    "store_opened_web_android": {
+      "it": "Apro la pagina di Google Play nel browser.",
+      "en": "Opening the Google Play page in your browser."
+    },
+    "store_opened_web_steam": {
+      "it": "Apro la pagina Steam nel browser.",
+      "en": "Opening the Steam page in your browser."
     }
   },
   "games": [
