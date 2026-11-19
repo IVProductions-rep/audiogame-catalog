@@ -106,7 +106,8 @@
         },
         {
           "say": [
-            "s:trailer"
+            "?desktop:s:trailer",
+            "?mobile:s:trailer_touch"
           ],
           "action": "trailer",
           "if": "trailer"
@@ -236,6 +237,10 @@
     "trailer": {
       "it": "Ascolta il trailer. Invio per avviarlo o fermarlo.",
       "en": "Listen to the trailer. Press Enter to play or stop it."
+    },
+    "trailer_touch": {
+      "it": "Ascolta il trailer. Tocca due volte per avviarlo o fermarlo.",
+      "en": "Listen to the trailer. Double tap to play or stop it."
     },
     "trailer_stopped": {
       "it": "Trailer fermato.",
