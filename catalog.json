@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "minClient": 1,
-  "updated": "2026-11-18",
+  "updated": "2026-11-20",
   "languages": [
     "it",
     "en"
@@ -396,8 +396,7 @@
           "bundleId": "com.ivproductions.blindquestthree",
           "price": {
             "EUR": 6.99
-          },
-          "available": false
+          }
         }
       },
       "steamDate": "11 Jun, 2024"
@@ -469,8 +468,7 @@
           "bundleId": "com.ivproductions.blindquesttwo",
           "price": {
             "EUR": 5.99
-          },
-          "available": false
+          }
         }
       },
       "steamDate": "18 Mar, 2021"

@@ -1,40 +1,7 @@
-Sincronizzazione 2026-11-18 08:45
+Sincronizzazione 2026-11-20 08:52
 
 Cambiato:
-- audiospeed: data Steam 11 Nov, 2026
-- trailer nuovo: trailer/audiospeed_257407037 (Gameplay Trailer Italian)
-- trailer nuovo: trailer/audiospeed_257399160 (Gameplay Trailer)
-- audiospeed: trailer it=trailer/audiospeed_257407037, en=trailer/audiospeed_257399160
-- gunnar_malakor: data Steam Q1 2027
-- trailer nuovo: trailer/gunnar_malakor_257459204 (Gunnar Malakor Trailer)
-- gunnar_malakor: trailer it=trailer/gunnar_malakor_257459204, en=trailer/gunnar_malakor_257459204
-- audiorace: data Steam 21 Mar, 2025
-- trailer nuovo: trailer/audiorace_257116339 (Audiogame Trailer)
-- trailer nuovo: trailer/audiorace_257115884 (Audiogame Trailer)
-- audiorace: trailer it=trailer/audiorace_257116339, en=trailer/audiorace_257115884
-- blindquest3: data Steam 11 Jun, 2024
-- trailer nuovo: trailer/blindquest3_257012559 (Gameplay Trailer)
-- blindquest3: trailer it=trailer/blindquest3_257012559, en=trailer/blindquest3_257012559
-- hellhunter2: data Steam 30 Oct, 2023
-- trailer nuovo: trailer/hellhunter2_256969252 (Hell Hunter 2 - Gameplay Trailer)
-- hellhunter2: trailer it=trailer/hellhunter2_256969252, en=trailer/hellhunter2_256969252
-- blindquest2: data Steam 18 Mar, 2021
-- trailer nuovo: trailer/blindquest2_256802107 (Blind Quest - The Frost Demon - Gameplay)
-- blindquest2: trailer it=trailer/blindquest2_256802107, en=trailer/blindquest2_256802107
-- western_drama: data Steam 2 Feb, 2021
-- trailer nuovo: trailer/western_drama_256817231 (A Western Drama - Teaser Ita)
-- western_drama: trailer it=trailer/western_drama_256817231, en=trailer/western_drama_256817231
-- eymerich_demon: data Steam 27 Mar, 2020
-- trailer nuovo: trailer/eymerich_demon_256754130 (The Demon - Nicolas Eymerich Inquisitor Audiogame Trailer)
-- eymerich_demon: trailer it=trailer/eymerich_demon_256754130, en=trailer/eymerich_demon_256754130
-- blindquest1: data Steam 19 Mar, 2020
-- trailer nuovo: trailer/blindquest1_256777445 (Blind Quest - Gameplay Trailer)
-- blindquest1: trailer it=trailer/blindquest1_256777445, en=trailer/blindquest1_256777445
-- hellhunter1: data Steam 13 Oct, 2023
-- trailer nuovo: trailer/hellhunter1_256969823 (Hell Hunter: Anti-Nomen Gameplay trailer)
-- hellhunter1: trailer it=trailer/hellhunter1_256969823, en=trailer/hellhunter1_256969823
-- blindquest3: iOS non in vendita, nascosto
-- blindquest2: iOS non in vendita, nascosto
+- niente
 
 Da decidere:
 - niente
