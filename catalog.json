@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "minClient": 1,
-  "updated": "2026-11-20",
+  "updated": "2026-11-23",
   "languages": [
     "it",
     "en"
@@ -486,7 +486,7 @@
       },
       "trailer": {
         "it": "trailer/western_drama_256817231",
-        "en": "trailer/western_drama_256817231"
+        "en": "trailer/western_drama_256817072"
       },
       "stores": {
         "steam": {
